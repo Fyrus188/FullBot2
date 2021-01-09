@@ -1046,5 +1046,3 @@ if (text.includes('#randomhentai2')){
           (ress) => {
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
