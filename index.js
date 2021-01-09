@@ -13,7 +13,7 @@ const
    waChatKey,
    mentionedJid,
    processTime,
-} = require("@adiwajshing/baileys")
+} = require("@adiwajshing/ibaileys")
 const qrcode = require("qrcode-terminal") 
 const moment = require("moment-timezone") 
 const fs = require("fs") 
@@ -803,12 +803,12 @@ client.on('group-participants-update', async (anu) => {
 						const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
 						buff = await client.downloadMediaMessage(encmedia)
 						for (let _ of anu) {
-							client.sendMessage(_.jid, buff, image, {caption: `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
+							client.sendMessage(_.jid, buff, image, {caption: `❮ FYRUS 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`})
 						}
 						reply('𝙨𝙪𝙘𝙘𝙚𝙨𝙨 𝙗𝙧𝙤𝙖𝙙𝙘𝙖𝙨𝙩 ')
 					} else {
 						for (let _ of anu) {
-							sendMess(_.jid, `❮ 𝙋𝙀𝙎𝘼𝙉 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`)
+							sendMess(_.jid, `❮ FYRUS 𝘽𝙍𝙊𝘼𝘿𝘾𝘼𝙎𝙏 ❯\n\n${body.slice(4)}`)
 						}
 						reply('𝙨𝙪𝙘𝙘𝙚𝙨𝙨 𝙗𝙧𝙤𝙖𝙙𝙘𝙖𝙨𝙩 ')
 					}
@@ -1038,8 +1038,6 @@ client.on('group-participants-update', async (anu) => {
 			console.log('Error : %s', color(e, 'red'))
 		}
 	})
-}
-
 if (text.includes('#randomhentai2')){
   var teks = text.replace(/#randomhentai2 /, '')
     axios.get(`https://tobz-api.herokuapp.com/api/hentai`).then((res) => {
