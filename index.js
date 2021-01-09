@@ -1037,12 +1037,3 @@ client.on('group-participants-update', async (anu) => {
 		} catch (e) {
 			console.log('Error : %s', color(e, 'red'))
 		}
-	})
-if (text.includes('#randomhentai2')){
-  var teks = text.replace(/#randomhentai2 /, '')
-    axios.get(`https://tobz-api.herokuapp.com/api/hentai`).then((res) => {
-      imageToBase64(res.data.result)
-        .then(
-          (ress) => {
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
